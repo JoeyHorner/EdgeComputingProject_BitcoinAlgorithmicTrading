@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Code/Collection_and_processing"
+    ]
+}

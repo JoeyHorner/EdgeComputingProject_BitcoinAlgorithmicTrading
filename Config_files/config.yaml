@@ -1,0 +1,43 @@
+---
+
+# define the directories where different things are stored
+# --- If downloading the code and attempting to run it, these must be changed to your local location
+data_directory: 'C:\Users\Joey\Downloads\Bitcoin-Algorithmic-Trading-Paper-main\Bitcoin-Algorithmic-Trading-Paper-main\my_approach\Data'
+model_directory: 'C:\Users\Joey\Downloads\Bitcoin-Algorithmic-Trading-Paper-main\Bitcoin-Algorithmic-Trading-Paper-main\my_approach\Trained_models'
+audio_file_path: 'C:\\Users\\Joey\\Downloads\\2021-ca4021-cronen2\\music.wav'
+
+# the random forest model is used in one of the feature selection pocesses
+rand_forest_feat_select_params: {'step': 0.9,
+                                 'min_features_to_select': 1,
+                                 'verbose': 0,
+                                 'scoring': 'neg_mean_absolute_error',
+                                 'n_jobs': -1,
+                                 'cv': 5,
+                                }
+
+# the time interval to train the data on
+train_intervals_list:
+  - !!python/tuple ['2015-08-17', '2024-01-01']
+
+# end date of the data used to test the models 
+end_test_date: '2024-04-15'
+
+# the type of analysis to run
+types_of_analysis:
+  - 'clas'
+  - 'reg'
+
+# the number of compenents to use 
+num_pca_features_list:
+  - 11
+  - 27
+  - 55
+
+random_seed: 7
+
+shift_periods_in_days_list: [1]
+
+# for then iterating through and training the models
+feature_selection_method_list: 
+  - "pca"
+
